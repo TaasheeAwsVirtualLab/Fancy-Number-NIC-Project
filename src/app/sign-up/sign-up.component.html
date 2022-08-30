@@ -1,0 +1,188 @@
+<!-- HEADER CONTENT-->
+<header>
+  <!--TOP HEADER 1-->
+  <div id="#topheader1">
+      <div class="container-fluid tophead-container">
+          <div class="row ">
+              <div class="col-md-6 left-position tophead1-col">
+                  <marquee behavior="scroll"direction="left"><a href=""><span> The Applicants will have to create their Login through New Public User link for Reserving of Registration Mark of Choice/Fancy Number </span></a></marquee>
+              </div>
+              <div class="col-md-1">
+              </div>
+              <div class="col-md-5 right-position tophead2-col">
+                  <ul class="top-menu ">
+                      <li>
+                          <a href="https://parivahan.gov.in/" title="Parivahan Home">
+                              <i class="fa fa-home" aria-hidden="true"></i>
+                              <span class="glyphicon glyphicon-home"></span> Parivahan Home
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#main-content">
+                              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                              <span class="glyphicon glyphicon-arrow-down"></span>
+                              Skip to main content
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#navbar">
+                              <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                              <span class="glyphicon glyphicon-arrow-down"></span>
+                              Skip to navigation
+                          </a>
+                      </li>
+                      <li><a href="#">A<sup>+</sup></a></li>
+                      <li><a href="#">A</a></li>
+                      <li><a href="#">A<sup>-</sup></a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--TOP HEADER 2-->
+  <div class="#topheader2">
+      <div class="navbar-th2 navbar-class nav-back-th2">
+          <div class="nav-ui-grid-row">
+              <div class="nav-ui-grid-col-1">
+                  <a href="" class="top-space"><img src="/assets/logo/emblem-logo (1).png" alt=""></a>
+              </div>
+              <div class="nav-ui-grid-col-9">
+                  <div class="top-space ministery-text-heading text-uppercase">
+                      ministry of road transport and highways
+                  </div>
+                  <div class="ministery-text-sub-heading">
+                      Government Of India
+                  </div>
+              </div>
+              <div class="nav-ui-grid-col-2">
+                  <div class="top-space">
+                      <a href="" class="top-space"><img src="/assets/logo/e-vahan-logo.png" alt=""></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- HEADER NAVIGATION BAR-->
+  <nav>
+      <div class="collaps navbar-content navbar">
+          <ul class="navbar-ul navbar-ul-nav">
+              <li class="navbar-ul-li">
+                  <a href="">
+                      <i class="fa fa-home" aria-hidden="true"></i>
+                      <span class="login-logo">Home </span> </a>
+              </li>
+              <li class="navbar-ul-li">
+                  <a href=""> Show Auction Result</a>
+              </li>
+              <li class="navbar-ul-li">
+                  <a href=""> Bidding Updates</a>
+              </li>
+              <li class="navbar-ul-li">
+                  <a href=""><span style="font-weight: bold;font-size: larger;font-style: italic;color: white">Search
+                          By Number</span></a>
+              </li>
+              <li class="navbar-ul-li">
+                  <a href="">Show Auction Status</a>
+              </li>
+          </ul>
+      </div>
+  </nav>
+  <div class="scroll-news">
+          <marquee behavior="scroll" direction="left"><a href=""><span class="scroll-news"> Auction Started Right Now In UP RTO.</span></a></marquee>
+  </div>
+</header>
+
+
+<!--Sign Up Form-->
+<div class="content">
+  <div class="content-middle">
+    <h3>USER SIGN UP</h3>
+    <div class="form-content">
+      <div class="form-header"> Registration Form</div>
+      <div class="form-fields">
+        <div class="input-field">
+          <select name="cars" id="cars">
+            <option value="">Select State</option>
+            <option value="volvo">Andhra Pradesh</option>
+            <option value="saab">Telengana</option>
+            <option value="mercedes">Madya Pradesh</option>
+            <option value="audi">Kerala</option>
+          </select>
+        </div>
+
+        <div class="input-field-radio">
+          <label>
+            <input [value]="0" [(ngModel)]="isVisible" name="isVisible" type="radio" [checked]="!isSelected" /> Mobile
+            no.
+          </label>
+
+          <label><input [value]="1" [(ngModel)]="isVisible" name="isVisible" type="radio" [checked]="isSelected" />
+            Email
+          </label>
+
+          <label>
+            <input [value]="2" [(ngModel)]="isVisible" name="isVisible" type="radio" [checked]="!isSelected" /> Vaahan
+            Number
+          </label>
+        </div>
+
+
+
+
+
+        <!-- Mobile Form-->
+        <div class="hideDiv" *ngIf="isVisible == 0">
+          <div class="input-field">
+            <input type="tel" placeholder="Mobile Number*">
+          </div>
+          <button class="button-des">Send Otp</button>
+          <div class="input-field">
+            <input type="number" placeholder="Enter OTP*">
+          </div>
+          <button class="button-des" (click)="signUp()">Sign Up</button>
+          <button class="button-reset">Reset</button>
+        </div>
+        <!-- SignUP Form-->
+        <div class="showDiv" *ngIf="isVisible == 1">
+          <form [formGroup]="signUpForm">
+            <div class="input-field">
+              <input type="text" placeholder="First Name*" formControlName="firstName">
+            </div>
+            <div class="input-field">
+              <input type="text" placeholder="Last Name*" formControlName="lastName">
+            </div>
+            <div class="input-field">
+              <input type="email" placeholder="Email*" formControlName="email">
+            </div>
+            <div class="input-field">
+              <input type="text" placeholder="Mobile No*" formControlName="mobileNo">
+            </div>
+            <button class="button-des" (click)="signUp()">Sign Up</button>
+            <button class="button-reset">Reset</button>
+          </form>
+        </div>
+        <!-- Vahan  Form-->
+        <div class="showDiv" *ngIf="isVisible == 2">
+          <div class="input-field">
+            <input type="number" placeholder="Vaahan Number*">
+          </div>
+          <div class="input-field">
+            <input type="text" placeholder="Applicant Name*">
+          </div>
+          <div class="input-field">
+            <input type="tel" placeholder="Mobile Number*">
+          </div>
+          <button class="button-des" (click)="signUp()">Sign Up</button>
+          <button class="button-reset">Reset</button>
+        </div>
+      </div>
+
+      <div class="input-btn">
+        <span>Already have an Account</span>
+        <a href="" routerLink="/login">SignIn?</a>
+      </div>
+    </div>
+
+  </div>
+</div>
