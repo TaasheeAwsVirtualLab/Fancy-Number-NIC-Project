@@ -218,7 +218,6 @@ sup {
 .navbar-ul li a:hover{
     color: #fff !important;
     background-color: #00648C !important;
-
 }
 
 /* HEADER SCROLLING NAVIGATION BAR */
@@ -297,8 +296,7 @@ sup {
     width: 40%;
     margin-left: 30%;
     height: auto;
-    border: 1px solid #1682BA;
-    
+    border: 1px solid #1682BA;  
 }
 .form-header {
     width: 100%;
@@ -351,10 +349,8 @@ select{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
     padding-left: 150px;
     padding-top: 20px;
-    
     margin-right: 80px;
     flex-direction: row;
     gap: 1rem;

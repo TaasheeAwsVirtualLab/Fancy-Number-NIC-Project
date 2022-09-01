@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MyserviceService } from '../myservice.service';
 
@@ -30,13 +29,13 @@ export class SignUpComponent implements OnInit {
 
 
   signUp(){
-    this.myser.signupForm(this.signUpForm.value).subscribe(res=>{
+    this.myser.signupForm(this.signUpForm.value).subscribe((res:any)=>{
       console.log(res);
       this.msg=res;
       if(this.msg.result.status==="SUCCESS"){
         alert("sign up succeesfully");
-      console.log(res)
-      this.router.navigate(['/login']);
+        console.log(res)
+        this.router.navigate(['/login']);
       }
       else{
         alert("please enter valid details");
