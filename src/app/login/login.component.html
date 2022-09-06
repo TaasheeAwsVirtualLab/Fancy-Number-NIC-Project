@@ -124,7 +124,13 @@
         <div class="main-container">
             <form [formGroup]="loginForm">
             <input type="text" class="input-box-style" placeholder="User Id" formControlName="userName">
+            <div *ngIf="loginForm.get('userName')?.touched && loginForm.get('userName')?.invalid" class="text-danger">
+                Please Enter a valid User Name 
+            </div>
             <input type="password" class="input-box-style" placeholder="Password" formControlName="password">
+            <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="text-danger">
+                Please Enter a valid  Password 
+            </div>
             <input type="text" class="input-box-style" placeholder="Captcha" formControlName="captureCode">
             <button class="login-button" (click)="loginData()">Login</button>
             </form>

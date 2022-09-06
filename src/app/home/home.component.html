@@ -70,7 +70,8 @@
                 <li class="navbar-ul-li">
                     <a href="">
                         <i class="fa fa-home" aria-hidden="true"></i>
-                        <span class="login-logo">Home </span> </a>
+                        <span class="login-logo">Home </span> 
+                    </a>
                 </li>
                 <li class="navbar-ul-li">
                     <a href=""> Show Auction Result</a>
@@ -112,26 +113,30 @@
                     <span class="select-rto">Select RTO</span><br>
                     <select name="cars" id="cars" style="width: 80%;">
                         <option value="">All RTO</option>
-                        <option value="0">Aurangabad</option>
-                        <option value="1">Mumbai</option>
-                        <option value="2">Pune</option>
-                        <option value="3">Delhi</option>
+                        <option value="0">Aurangabad(38)</option>
+                        <option value="1">Mumbai(56)</option>
+                        <option value="2">Pune(26)</option>
+                        <option value="3">Delhi(28)</option>
+                        <option value="4">Lucknow(58)</option>
                     </select>
                 </div>
                 <div class="column">
                     <span class="select-rto">Select Action</span><br>
                     <select name="cars" id="cars" style="width: 80%;" class="action">
                         <option value="">Select Action</option>
-                        <option value="0">Aurangabad</option>
-                        <option value="1">Mumbai</option>
-                        <option value="2">Pune</option>
-                        <option value="3">Delhi</option>
+                        <option value="0">ADD RESERVE NUMBER</option>
+                        <option value="1">ADD SERIES</option>
+                        <option value="2">ASSIGN NUMBER TO VIP</option>
+                        <option value="3">ASSIGN/REJECT FANCY NUMBERS AFTER BIDDING RESULT</option>
+                        <option value="4">ASSIGN/REJECT FROM PENDING FANCY NUMBERS AFTER BIDDING RESULT</option>
+                        <option value="5">BIDDING PROCESS</option>
                     </select>
                 </div>
                 <div class="column show-form">
-                    <button><span class="show-form-button">Show Form</span></button>
+                    <button><span class="show-form-button" [routerLink]="['/action']">Show Form</span></button>
                 </div>
 
+            
                 <div class="col-12">
                     <div class="form-heading">
                         <h2>Welcome to Registration Number Reservation System</h2>
@@ -139,6 +144,63 @@
                             <span><b>url :</b></span>
                             <a href="https://parivahan.gov.in">https://parivahan.gov.in</a>
                         </marquee>
+                    </div>
+                    <div class="col-12 ">
+                          <h2><span class="instruction">Instruction For Bidders :</span></h2>
+                          <div class="instruction-info">
+                          <img src="../../assets/logo/dlflows.png" alt="" class="instruction-image">
+                          </div>
+                    </div>
+                    <div class="col-12">
+                        <ul class="instruction-item">
+                        <li class="list-group-item">
+                            <span class="heading_3">1.A.Short name, extension and commencement.—(1) These Rule may be called the Bihar Motor Vehicle (Amendment) Rule 2019</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="heading_3">B. It shall extend to the whole of State of Bihar. </span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="heading_3">C. It shall come into force from the date of its final publication in the Bihar Gazette</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="heading_3">2.Rule 64 of Bihar Motor Vehicle Rule, 1992 shall be substituted by following :-
+                                ‘‘64 (1) The registering authority shall allot to the vehicle a registration mark in
+                                series which shall begin with the registration mark allotted to the State
+                                under sub-Section (6) of Section 41 of the Act and shall be followed by
+                                State Code number assigned to the registering authority and then by the
+                                figure (alphabet), if any, allotted by the State Transport Commissioner,
+                                but the registering authority shall not start series in new alphabet until he
+                                had obtained prior written permission of the State Transport
+                                Commissioner.’’ 
+                            </span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="heading_3">
+                                2.2.The registering authority, on receipt of an application for registration of
+                            a motor vehicle, shall assign registration mark under sub-section (3) of
+                            State Rules in order of receipt of applications. The registration number
+                            to an application shall be next to the registration number alloted to an
+                            application but the fancy number could be alloted to the applicants by
+                            following established procedure and depositing due fee.
+                            </span>
+                        </li>
+
+                        <li class="list-group-item">
+                            <span class="heading_3">
+                                2.3.Following registration numbers of every registration series which is
+                                allotted to the Motor Vehicles registered in the State of Bihar are being
+                                marked here as Fancy registration numbers and the base price for them
+                                are fixed separately for transport vehicles and non-transport vehicles in
+                                the following table.
+                            </span>
+                        </li>
+                        </ul>
+
+                        <div class="primary-panel">
+                             <table class="table table-responsive">
+                                   <th></th>
+                             </table>
+                        </div>
                     </div>
                 </div>
             </div>

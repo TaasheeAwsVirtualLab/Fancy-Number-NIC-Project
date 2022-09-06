@@ -10,12 +10,14 @@ import { LoginComponent } from './login/login.component';
 
 import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ActionComponent } from './action/action.component';
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    ActionComponent
   ],
   imports: [
     BrowserModule,
