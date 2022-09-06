@@ -93,8 +93,8 @@
           <marquee behavior="scroll" direction="left"><a href=""><span class="scroll-news"> Auction Started Right Now In UP RTO.</span></a></marquee>
   </div>
 </header>
-             
-<h1> Ministry of G </h1>
+
+
 <!--Sign Up Form-->
 <div class="content">
   <div class="content-middle">
@@ -148,18 +148,30 @@
         <div class="showDiv" *ngIf="isVisible == 1">
           <form [formGroup]="signUpForm">
             <div class="input-field">
-              <input type="text" placeholder="First Name*" formControlName="firstName">
+              <input type="text" placeholder="First Name*" formControlName="firstName"><br>
+              <div *ngIf="signUpForm.get('firstName')?.touched && signUpForm.get('firstName')?.invalid" class="text-danger">
+                Please Enter a valid First Name 
+              </div>
             </div>
             <div class="input-field">
-              <input type="text" placeholder="Last Name*" formControlName="lastName">
+              <input type="text" placeholder="Last Name*" formControlName="lastName"><br>
+              <div *ngIf="signUpForm.get('lastName')?.touched && signUpForm.get('lastName')?.invalid" class="text-danger">
+                Please Enter a valid Last Name
+              </div>
             </div>
             <div class="input-field">
-              <input type="email" placeholder="Email*" formControlName="email">
+              <input type="text" placeholder="Email*" formControlName="email" ><br>
+              <div *ngIf="signUpForm.get('email')?.touched && signUpForm.get('email')?.invalid" class="text-danger">
+                Please Enter a valid Email
+              </div>
             </div>
             <div class="input-field">
-              <input type="text" placeholder="Mobile No*" formControlName="mobileNo">
+              <input type="text" placeholder="Mobile No*" formControlName="mobileNo"><br>
+              <div *ngIf="signUpForm.get('mobileNo')?.touched && signUpForm.get('mobileNo')?.invalid" class="text-danger validation-info">
+                Please Enter a Valid Mobile Number
+              </div>
             </div>
-            <button class="button-des" (click)="signUp()">Sign Up</button>
+            <button class="button-des" (click)="signUp()" >Sign Up</button>
             <button class="button-reset">Reset</button>
           </form>
         </div>
@@ -184,6 +196,5 @@
         <a href="" routerLink="/login">SignIn?</a>
       </div>
     </div>
-
   </div>
 </div>

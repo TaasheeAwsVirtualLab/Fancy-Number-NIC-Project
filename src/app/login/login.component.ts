@@ -5,7 +5,7 @@ import { BaseChartDirective } from 'ng2-charts';
 import DataLabelsPlugin from 'chartjs-plugin-datalabels'
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MyserviceService } from '../myservice.service';
 
 @Component({
@@ -77,28 +77,41 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      userName: [""],
-      password: [""],
-      captureCode:[""]
+      userName: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      captureCode:new FormControl('',Validators.required)
     })
   }
 
   loginData(){
-    this.myser.loginFormData(this.loginForm.value).subscribe(data=>
-    {
-      this.msg=data;
-      console.log(this.msg);
-      if(this.msg.result.status==="SUCCESS"){
-        alert('login Successfully');
-        this.router.navigate(['/home']);
-      }
-      else{
-        alert('user not found');
-      }
-    },
-    error=>{
-      console.log(error);
+    if(this.loginForm.valid){
+      this.myser.loginFormData(this.loginForm.value).subscribe(data=>
+        {
+          this.msg=data;
+          console.log(this.msg);
+          if(this.msg.result.status==="SUCCESS"){
+            alert('login Successfully');
+            this.router.navigate(['/home']);
+          }
+          else{
+            alert('user not found');
+          }
+        },
+        error=>{
+          console.log(error);
+        }
+        )
     }
-    )
+    else {
+      this.markFieldsAsTouched(this.loginForm);
+    }
+  }
+  
+  /* MarkTouched Logic */
+  markFieldsAsTouched(form: AbstractControl): void {
+    form.markAsTouched({onlySelf: true});
+    if (form instanceof FormArray || form instanceof FormGroup) {
+      Object.values(form.controls).forEach(this.markFieldsAsTouched);
+    }
   }
 }

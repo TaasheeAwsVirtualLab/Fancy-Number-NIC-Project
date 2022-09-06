@@ -398,3 +398,74 @@ button{
     padding-top: 6px;
     font-size: 20px;
 }
+
+.instruction{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #cd5403;
+    text-align: left;
+    text-decoration: none;
+    margin: 2px 0 7px;
+    margin-left: 30px;
+}
+
+.instruction-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.list-group-item{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.heading_3{
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px !important;
+}
+.instruction-item{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.table-responsive{
+    min-height: .01%;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+}
+.table{
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.primary-panel{
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-color: #337ab7;
+    max-height: 280px;
+    overflow-y: scroll;
+    padding: 15px;
+}
+
+th{
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
