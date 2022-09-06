@@ -33,7 +33,7 @@ export class SignUpComponent implements OnInit {
       console.log(res);
       this.msg=res;
       if(this.msg.result.status==="SUCCESS"){
-        alert("sign up succeesfully");
+        alert("sign up successfully");
         console.log(res)
         this.router.navigate(['/login']);
       }
